@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane id="root" fx:id="root" onMouseClicked="#changeTabsSide" prefHeight="841.0" prefWidth="1107.0" side="LEFT" stylesheets="@../res/style/style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.owl.encryption.view.MainController">
+   <tabs>
+      <Tab text="Расшифровать">
+         <content>
+            <VBox id="container" alignment="CENTER">
+               <children>
+                  <VBox id="header" alignment="CENTER">
+                     <children>
+                        <Label id="title" text="Что мне сказали?" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="36.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="sub_title" text="Программа, которая поможет понять, куда и зачем тебе нужно пойти" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Calibri Light" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label id="large_text" text="Введите ключ шифрования">
+                           <font>
+                              <Font name="Calibri Light" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../res/img/key_icon.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ImageView>
+                              <TextField id="key_text" fx:id="decryptKeyText" alignment="CENTER" promptText="Ключ..." HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER" spacing="50.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="208.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="medium_text" alignment="CENTER" text="Зашифрованный текст" />
+                              <TextArea fx:id="encryptedText" wrapText="true" VBox.vgrow="ALWAYS" />
+                              <Label id="medium_text" fx:id="encryptedStringSize" text="String size:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefWidth="350.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="medium_text" alignment="CENTER" text="Расшифрованный текст" />
+                              <TextArea fx:id="decryptedText" wrapText="true" VBox.vgrow="ALWAYS" />
+                              <Label id="medium_text" fx:id="decryptedStringSize" text="String size:" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button id="button" mnemonicParsing="false" onAction="#decryptBtnClick" prefHeight="50.0" prefWidth="150.0" text="Расшифровать">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab text="Зашифровать">
+         <content>
+            <VBox id="container" alignment="CENTER">
+               <children>
+                  <VBox id="header" alignment="CENTER">
+                     <children>
+                        <Label id="title" text="Что мне ответить?" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="36.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="sub_title" text="Здесь можно зашифровать своё сообщение" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Calibri Light" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label id="large_text" text="Введите ключ шифрования">
+                           <font>
+                              <Font name="Calibri Light" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../res/img/key_icon.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ImageView>
+                              <TextField id="key_text" fx:id="encryptKeyText" alignment="CENTER" promptText="Ключ..." HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="50.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="medium_text" alignment="CENTER" text="Исходный текст" />
+                              <TextArea fx:id="encryptSourceText" wrapText="true" VBox.vgrow="ALWAYS" />
+                              <Label id="medium_text" fx:id="sourceStringSize" text="String size:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="medium_text" alignment="CENTER" text="Зашифрованный текст" />
+                              <TextArea fx:id="encryptedSourceText" wrapText="true" VBox.vgrow="ALWAYS" />
+                              <Label id="medium_text" fx:id="encryptSourceStringSize" text="String size:" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button id="button" mnemonicParsing="false" onAction="#encryptBtnClick" prefHeight="50.0" prefWidth="150.0" text="Зашифровать">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab text="Работа с файлами">
+         <content>
+            <VBox id="container" alignment="CENTER">
+               <children>
+                  <VBox id="header" alignment="CENTER">
+                     <children>
+                        <Label id="title" text="Работа с файлами" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="36.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label id="sub_title" text="Зашифровать, расшифровать файл целиком" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Calibri Light" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label id="large_text" text="Ключ шифрования">
+                           <font>
+                              <Font name="Calibri Light" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#keyIconClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../res/img/key_icon.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ImageView>
+                              <TextField id="key_text" fx:id="tfFileEncryptKey" alignment="CENTER" promptText="Ключ..." HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Label id="large_text" text="Метод шифрования">
+                           <font>
+                              <Font name="Calibri Light" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" spacing="50.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <RadioButton id="sub_title" fx:id="caesarAlgorithm" accessibleText="Caesar" mnemonicParsing="false" onAction="#radioButtonAction" text="Шифр Цезаря">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="CipherGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="sub_title" fx:id="parallelAlgorithm" accessibleText="Parallel" mnemonicParsing="false" onAction="#radioButtonAction" selected="true" text="Параллельное шифрование" toggleGroup="$CipherGroup" />
+                              <RadioButton id="sub_title" fx:id="AESAlgorithm" accessibleText="AES" mnemonicParsing="false" onAction="#radioButtonAction" text="AES" toggleGroup="$CipherGroup" />
+                              <RadioButton id="sub_title" fx:id="RSAAlgorithm" accessibleText="RSA" mnemonicParsing="false" onAction="#radioButtonAction" text="RSA" toggleGroup="$CipherGroup" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="50.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="medium_text" alignment="CENTER" text="Исходный файл" />
+                              <TextArea fx:id="taSourceFile" />
+                              <Button id="button" fx:id="encryptFileBtn" mnemonicParsing="false" onAction="#encryptFileClick" prefHeight="50.0" prefWidth="150.0" text="Зашифровать" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label id="medium_text" alignment="CENTER" text="Обработанный файл" />
+                              <TextArea fx:id="taModifiedFile" />
+                              <Button id="button" fx:id="decryptFileBtn" mnemonicParsing="false" onAction="#decryptFileClick" prefHeight="50.0" prefWidth="150.0" text="Расшифровать" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button id="button" fx:id="openFileBtn" mnemonicParsing="false" onAction="#openFileClick" prefHeight="50.0" prefWidth="150.0" text="Открыть файл">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

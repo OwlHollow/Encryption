@@ -1,0 +1,82 @@
+#root{
+    -fx-background-color: 
+        linear-gradient(whitesmoke 70%, lightgrey 100%);
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+#root .tab-header-background{
+    -fx-background-color: lightgrey;
+}
+
+#root .tab{
+    -fx-background-color: lightgrey;
+}
+
+#root .tab:selected{
+    -fx-background-color:
+        linear-gradient(lightgray 0%, whitesmoke 50%, lightgrey 100%);
+    -fx-border-color: darkgray darkgray lightgrey darkgray;
+    -fx-border-width: 2px;
+}
+
+#header{
+    -fx-border-color: darkgrey;
+    -fx-background-color: lightgrey;
+}
+
+#container{
+    -fx-border-color: darkgrey;
+}
+
+#title{
+    -fx-font-size: 28pt;
+    -fx-text-fill: black;
+}
+
+#sub_title{
+    -fx-font-size: 14pt;
+    -fx-text-fill: grey;
+}
+
+#large_text{
+    -fx-font-size: 20pt;
+}
+
+#medium_text{
+    -fx-font-size: 18pt;
+}
+
+.label{
+    -fx-text-fill: darkslategray;
+}
+
+.text-area .content{
+    -fx-background-color: whitesmoke;
+    -fx-text-fill: white;
+}
+
+.text-area:focused{
+    -fx-border-color: lightgrey;
+    -fx-effect: dropshadow(gaussian,lightgrey , 10, 0.5, 0, 0);
+}
+
+.text-field{
+    -fx-background-color: whitesmoke;
+    -fx-border-color: darkgrey;
+}
+
+.text-field:focused{
+    -fx-border-color: lightgrey;
+    -fx-effect: dropshadow(gaussian,lightgrey , 10, 0.5, 0, 0);
+}
+
+#button:hover{
+    -fx-background-color:
+        linear-gradient(lightgrey 0%, whitesmoke 70%, lightgrey 100%);
+}
+
+#button{
+    -fx-background-color:
+        linear-gradient(whitesmoke 0%, lightgray 70%, whitesmoke 100%);
+}
